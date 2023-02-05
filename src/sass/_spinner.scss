@@ -1,0 +1,66 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    /* фоновый цвет */
+    background: #92729574;
+    z-index: 1001;
+
+    
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    transition: all 250 ease-in-out;
+    cursor: pointer;
+}
+
+.loaded_hiding .preloader {
+    transition: 250 opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+.loading .preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loader {
+    width: 440px;
+    height: 160px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 50% solid #0ee115;
+    border-right: 50% solid transparent;
+    animation: rotation 1000 linear infinite;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+       width: 440px;
+    height: 160px;
+        border-radius: 50%;
+        border-left: 50% solid #e82d19;
+        border-bottom: 50% solid transparent;
+        animation: rotation 500 linear infinite reverse;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
